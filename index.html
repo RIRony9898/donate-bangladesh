@@ -16,18 +16,18 @@
   </head>
   <body class="font-lexend">
     <!-- header section start -->
-    <header class="sticky top-0 z-50 bg-base-100 pb-8">
+    <header class="sticky top-0 z-50 bg-transparent backdrop-blur-lg pb-8">
       <!-- navbar section start -->
       <div class="bg-[#F9F7F3]">
-        <nav class="navbar py-6 container mx-auto">
-          <div class="navbar-start">
+        <nav class="navbar py-6 container mx-auto grid grid-cols-1 md:grid-cols-3 justify-center gap-4">
+          <div class="navbar-start order-3 md:order-1 w-full justify-center">
             <button
               class="btn btn-outline border-none text-xl font-medium text-black bg-[#B4F461] px-8 py-3 content-center"
             >
               Blog
             </button>
           </div>
-          <div class="navbar-center gap-4">
+          <div class="navbar-center gap-4 order-1 md:order-2 w-full justify-center">
             <img
               src="assets/logo.png"
               alt="donate bangladesh"
@@ -35,7 +35,7 @@
             />
             <h1 class="text-xl font-semibold">Donate Bangladesh</h1>
           </div>
-          <div class="navbar-end gap-3">
+          <div class="navbar-end gap-3 order-2 md:order-3 w-full justify-center">
             <img src="assets/coin.png" alt="" />
             <p class="text-[#111111B3] text-xl font-medium">
               <span id="balance">5500</span> BDT
@@ -72,7 +72,7 @@
     <!-- main section end -->
     <main class="container mx-auto flex flex-col gap-8">
       <!-- Cards Section -->
-       <section id="section-cards">
+       <section id="section-cards" class="flex flex-col gap-6">
         <!-- card-1 -->
       <div
       class="card lg:card-side bg-base-100 shadow-xl p-8 rounded-2xl border border-[#1111111A]"
