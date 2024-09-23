@@ -11,13 +11,19 @@ donateNoakhali.addEventListener("click", function () {
   let newNoakhaliBalance =
     parseFloat(noakhaliBalance) + parseFloat(donateNoakhali);
 
-  document.getElementById("noakhaliBalance").innerText = newNoakhaliBalance;
+  
 
   let balance = document.getElementById("balance").innerText;
 
   let newBalance = parseFloat(balance) - parseFloat(donateNoakhali);
 
-  document.getElementById("balance").innerText = newBalance;
+  if(newBalance < 0){
+    alert("Insufficient balance!");
+    return;
+  }else{
+    document.getElementById("balance").innerText = newBalance;
+    document.getElementById("noakhaliBalance").innerText = newNoakhaliBalance;
+  }
 
   let cardTitleNoakhali = document.getElementById('card-title-noakhali').innerText;
 
@@ -39,7 +45,14 @@ donateFeni.addEventListener("click", function () {
 
   let balance = document.getElementById("balance").innerText;
   let newBalance = parseFloat(balance) - parseFloat(donateFeni);
-  document.getElementById("balance").innerText = newBalance;
+  
+  if(newBalance < 0){
+    alert("Insufficient balance!");
+    return;
+  }else{
+    document.getElementById("balance").innerText = newBalance;
+    document.getElementById("feniBalance").innerText = newFeniBalance;
+  }
 
   let cardTitleFeni = document.getElementById('card-title-feni').innerText;
 
@@ -67,7 +80,14 @@ donationQuotaInjured.addEventListener("click", function () {
 
   let balance = document.getElementById("balance").innerText;
   let newBalance = parseFloat(balance) - parseFloat(donateQuotaInjured);
-  document.getElementById("balance").innerText = newBalance;
+  
+  if(newBalance < 0){
+    alert("Insufficient balance!");
+    return;
+  }else{
+    document.getElementById("balance").innerText = newBalance;
+    document.getElementById("quotaInjuredBalance").innerText = newQuotaInjuredBalance;
+  }
 
   let cardTitleQuotaInjured = document.getElementById('card-title-quota-injured').innerText;
 
