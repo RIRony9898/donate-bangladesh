@@ -21,34 +21,9 @@ donateNoakhali.addEventListener("click", function () {
 
   let cardTitleNoakhali = document.getElementById('card-title-noakhali').innerText;
 
-//   // current date time
-//   const currentDateTime = new Date();
-
-//   // section history append
-//   const sectionHistory = document.getElementById("section-history");
-
-//   const createHistory = document.createElement("div");
-//   createHistory.className = "card";
-
-//   const cardBody = document.createElement("div");
-//   cardBody.className = "card-body";
-
-//   const cardTitle = document.createElement("h3");
-//   cardTitle.className = "card-title";
-//   cardTitle.textContent = `${donateNoakhali} Taka is Donate for Flood at Noakhali, Bangladesh`;
-
-//   const dateTimePara = document.createElement("p");
-//   dateTimePara.textContent = `${currentDateTime}`;
-
-//   cardBody.appendChild(cardTitle);
-//   cardBody.appendChild(dateTimePara);
-
-//   createHistory.appendChild(cardBody);
-
-//   sectionHistory.appendChild(createHistory);
-
 appendFunction(donateNoakhali, cardTitleNoakhali);
 });
+
 
 // donate feni function
 let donateFeni = document.getElementById("btn-donation-feni");
@@ -70,6 +45,7 @@ donateFeni.addEventListener("click", function () {
 
   appendFunction(donateFeni, cardTitleFeni);
 });
+
 
 // donate quota injured function
 let donationQuotaInjured = document.getElementById(

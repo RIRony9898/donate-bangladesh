@@ -32,3 +32,9 @@ let appendFunction = function (trigger, reason) {
 
   sectionHistory.appendChild(createHistory);
 }
+
+// btn-modal
+document.getElementById("btn-modal").addEventListener("click", function () {
+//   document.getElementById("my_modal_1").classList.add("hidden");
+  window.location.href = 'index.html';
+});
