@@ -8,12 +8,7 @@ let appendFunction = function (trigger, reason) {
   const sectionHistory = document.getElementById("section-history");
 
   const createHistory = document.createElement("div");
-  createHistory.className = "card";
-  createHistory.className = "border";
-//   createHistory.className = "my-6";
-//   createHistory.className = "border-[#1111111A]";
-//   createHistory.className = "rounded-2xl";
-//   createHistory.className = "gap-6";
+  createHistory.className = "card border my-6 border-[#1111111A] rounded-2xl gap-6";
 
   const cardBody = document.createElement("div");
   cardBody.className = "card-body";
@@ -38,8 +33,3 @@ let appendFunction = function (trigger, reason) {
 document.getElementById('btn-blog').addEventListener('click', function(){
   window.location.href = 'blog.html';
 })
-
-// // btn-home
-// document.getElementById('btn-home').addEventListener('click', function(){
-//   window.location.href = 'index.html';
-// })

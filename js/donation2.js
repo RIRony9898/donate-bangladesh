@@ -2,21 +2,19 @@
 let donateNoakhali = document.getElementById("btn-donation-noakhali");
 
 donateNoakhali.addEventListener("click", function () {
-  let donateNoakhali = parseFloat(document.getElementById(
+  let donateNoakhali = document.getElementById(
     "input-donation-amount-for-noakhali"
-  ).value);
+  ).value;
 
-  if(isNaN(donateNoakhali)) {
+  if(isNaN(donateNoakhali) || donateNoakhali<=0) {
     alert("Invalid Input!");
     return;
   }
 
-  let noakhaliBalance = document.getElementById("noakhaliBalance").innerText;
+  let noakhaliBalance = parseFloat(document.getElementById("noakhaliBalance").innerText);
 
-  let newNoakhaliBalance =
-    parseFloat(noakhaliBalance) + parseFloat(donateNoakhali);
+  let newNoakhaliBalance = noakhaliBalance + parseFloat(donateNoakhali);
 
-  
 
   let balance = parseFloat(document.getElementById("balance").innerText);
 
@@ -29,6 +27,7 @@ donateNoakhali.addEventListener("click", function () {
     document.getElementById("balance").innerText = newBalance;
     document.getElementById("noakhaliBalance").innerText = newNoakhaliBalance;
     document.getElementById('my_modal_1').showModal();
+    document.getElementById("input-donation-amount-for-noakhali").value = '';
   }
 
   let cardTitleNoakhali = document.getElementById('card-title-noakhali').innerText;
@@ -45,20 +44,28 @@ donateFeni.addEventListener("click", function () {
     "input-donation-amount-for-feni"
   ).value;
 
-  let feniBalance = document.getElementById("feniBalance").innerText;
-  let newFeniBalance = parseFloat(feniBalance) + parseFloat(donateFeni);
-  document.getElementById("feniBalance").innerText = newFeniBalance;
+  if(isNaN(donateFeni) || donateFeni <= 0) {
+    alert("Invalid Input!");
+    return;
+  }
 
-  let balance = document.getElementById("balance").innerText;
-  let newBalance = parseFloat(balance) - parseFloat(donateFeni);
+  let feniBalance = parseFloat(document.getElementById("feniBalance").innerText);
+
+  let newFeniBalance = feniBalance + parseFloat(donateFeni);
+
   
-  if(isNaN(parseFloat(donateFeni)) || newBalance < 0){
-    alert("Insufficient balance! or Invalid Input!");
+  let balance = parseFloat(document.getElementById("balance").innerText);
+
+  let newBalance = balance - donateFeni;
+  
+  if(newBalance < 0){
+    alert("Insufficient balance!");
     return;
   }else{
     document.getElementById("balance").innerText = newBalance;
     document.getElementById("feniBalance").innerText = newFeniBalance;
     document.getElementById('my_modal_1').showModal();
+    document.getElementById("input-donation-amount-for-feni").value = '';
   }
 
   let cardTitleFeni = document.getElementById('card-title-feni').innerText;
@@ -68,36 +75,38 @@ donateFeni.addEventListener("click", function () {
 
 
 // donate quota injured function
-let donationQuotaInjured = document.getElementById(
-  "btn-donation-quota-injured"
-);
+let donationQuotaInjured = document.getElementById("btn-donation-quota-injured");
 
 donationQuotaInjured.addEventListener("click", function () {
   let donateQuotaInjured = document.getElementById(
     "input-donation-amount-for-quota-injured"
   ).value;
 
-  let quotaInjuredBalance = document.getElementById(
-    "quotaInjuredBalance"
-  ).innerText;
-  let newQuotaInjuredBalance =
-    parseFloat(quotaInjuredBalance) + parseFloat(donateQuotaInjured);
-  document.getElementById("quotaInjuredBalance").innerText =
-    newQuotaInjuredBalance;
+  if(isNaN(donateQuotaInjured) || donateQuotaInjured <= 0) {
+    alert("Invalid Input!");
+    return;
+  }
 
-  let balance = document.getElementById("balance").innerText;
-  let newBalance = parseFloat(balance) - parseFloat(donateQuotaInjured);
+  let quotaInjuredBalance = parseFloat(document.getElementById("quotaInjuredBalance").innerText);
+
+  let newQuotaInjuredBalance = quotaInjuredBalance + parseFloat(donateQuotaInjured);
+
+  let balance = parseFloat(document.getElementById("balance").innerText);
+
+  let newBalance = balance - donateQuotaInjured;
   
-  if(isNaN(parseFloat(donateQuotaInjured)) || newBalance < 0){
-    alert("Insufficient balance! or Invalid Input!");
+  if(newBalance < 0){
+    alert("Insufficient balance!");
     return;
   }else{
     document.getElementById("balance").innerText = newBalance;
     document.getElementById("quotaInjuredBalance").innerText = newQuotaInjuredBalance;
     document.getElementById('my_modal_1').showModal();
+    document.getElementById("input-donation-amount-for-quota-injured").value = '';
   }
 
   let cardTitleQuotaInjured = document.getElementById('card-title-quota-injured').innerText;
 
   appendFunction(donateQuotaInjured, cardTitleQuotaInjured);
 });
+
